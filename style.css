@@ -378,11 +378,15 @@ a { color: inherit; }
 .pub-item {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 1rem;
   flex-wrap: wrap;
   padding: 1.2rem 0;
   border-bottom: 1px solid var(--line);
+}
+
+.pub-main {
+  max-width: 62ch;
 }
 
 .pub-item h3 {
@@ -394,8 +398,27 @@ a { color: inherit; }
   font-family: var(--mono);
   font-size: 0.82rem;
   color: var(--ink-dim);
-  margin: 0;
+  margin: 0 0 0.6em;
 }
+
+.abstract-toggle {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.abstract-toggle:hover { text-decoration: underline; }
+
+.pub-abstract {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  margin: 0.6em 0 0;
+}
+.pub-abstract[hidden] { display: none; }
 
 .pub-links {
   display: flex;
