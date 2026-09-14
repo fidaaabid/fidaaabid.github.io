@@ -30,6 +30,22 @@ if (loopPath) {
   }
 }
 
+// Publication abstract toggles
+document.querySelectorAll('.abstract-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const abstract = btn.nextElementSibling;
+    const isHidden = abstract.hasAttribute('hidden');
+    if (isHidden) {
+      abstract.removeAttribute('hidden');
+      btn.textContent = 'Abstract –';
+    } else {
+      abstract.setAttribute('hidden', '');
+      btn.textContent = 'Abstract +';
+    }
+    btn.setAttribute('aria-expanded', String(isHidden));
+  });
+});
+
 // Reveal sections on scroll
 const revealTargets = document.querySelectorAll('.section');
 revealTargets.forEach((el) => el.classList.add('reveal'));
