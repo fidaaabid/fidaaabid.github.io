@@ -418,8 +418,8 @@ a { color: inherit; }
 }
 
 .pub-thumb {
-  width: 96px;
-  height: 96px;
+  width: 192px;
+  height: 144px;
   object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid var(--line);
