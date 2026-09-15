@@ -368,6 +368,38 @@ a { color: inherit; }
 }
 .card-link:hover { text-decoration: underline; }
 
+/* ---------- Education ---------- */
+.edu-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.edu-item {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.edu-item:last-child { border-bottom: none; }
+
+.edu-item h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.3em;
+}
+
+.edu-meta {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  margin: 0 0 0.4em;
+}
+
+.edu-detail {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  max-width: 62ch;
+  margin: 0;
+}
+
 /* ---------- Publications ---------- */
 .pub-list {
   list-style: none;
