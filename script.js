@@ -46,6 +46,45 @@ document.querySelectorAll('.abstract-toggle').forEach((btn) => {
   });
 });
 
+// Lightbox for publication thumbnails
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt;
+  lightbox.removeAttribute('hidden');
+}
+
+function closeLightbox() {
+  lightbox.setAttribute('hidden', '');
+  lightboxImg.src = '';
+}
+
+document.querySelectorAll('.pub-thumb-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    openLightbox(img.src, img.alt);
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox && !lightbox.hasAttribute('hidden')) {
+    closeLightbox();
+  }
+});
+
 // Reveal sections on scroll
 const revealTargets = document.querySelectorAll('.section');
 revealTargets.forEach((el) => el.classList.add('reveal'));
