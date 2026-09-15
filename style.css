@@ -417,8 +417,19 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 
+.pub-thumb {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+  background: var(--bg-panel);
+}
+
 .pub-main {
   max-width: 62ch;
+  flex: 1;
 }
 
 .pub-item h3 {
